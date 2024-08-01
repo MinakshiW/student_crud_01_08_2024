@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Show</title>
+{% endblock %}
+
+{% block content %}
+<div class="container bg-secondary w-75 mx-auto p-4 mt-4 rounded-5 text-center">
+    <h1 class="text-warning">Student Details</h1>
+    <table class="table table-dark mt-3">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Marks</th>
+                <th>Gender</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for s in obj %}
+            <tr>
+                <td>{{s.sid}}</td>
+                <td>{{s.name}}</td>
+                <td>{{s.marks}}</td>
+                <td>{{s.gender}}</td>
+                <td>{{s.city}}</td>
+                <td>
+                    <a href="/a1/uv/{{s.sid}}/"><button class="btn btn-warning me-2">Update</button></a>
+                    <a href="/a1/dv/{{s.sid}}/"><button class="btn btn-danger">Delete</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

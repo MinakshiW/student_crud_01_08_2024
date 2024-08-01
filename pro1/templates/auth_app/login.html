@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Login</title>
+{% endblock %}
+
+{% block content %}
+<div class="container bg-secondary w-50 mx-auto p-4 mt-4 rounded-5 text-center">
+    <h1 class="text-warning">Login Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        USERNAME: <input type="text" class="form-control" name="unm">
+        <br><br>
+        PASSWORD: <input type="password" class="form-control", name="pwd">
+        <br><br>
+        <input type="submit" class="btn btn-success col-6">
+        <input type="reset" class="btn btn-warning col-6 float-end">
+    </form>
+</div>
+{% endblock %}
